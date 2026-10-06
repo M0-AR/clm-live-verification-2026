@@ -1,0 +1,19 @@
+services:
+  clm-research:
+    build: .
+    container_name: clm-live-verification
+    volumes:
+      - ./experiments/results:/app/experiments/results
+      - ./docs:/app/docs
+    environment:
+      - PYTHONPATH=/app
+      - TZ=UTC
+    command: python -m experiments.run_all --suite all --live
+  clm-test:
+    build: .
+    container_name: clm-test
+    volumes:
+      - ./experiments/results:/app/experiments/results
+    environment:
+      - PYTHONPATH=/app
+    command: pytest tests/ -v

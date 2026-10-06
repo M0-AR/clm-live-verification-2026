@@ -1,0 +1,17 @@
+{
+  "ts": "2026-10-06T11:45:43Z",
+  "agents": {
+    "clm": {
+      "live": {
+        "agent": "clm",
+        "live_acc": 1.0,
+        "live_pflops_std": 0.2714581663765,
+        "live_pflops_scr": 0.176447808144725,
+        "scr_saving": 0.35,
+        "n_queries": 6,
+        "n_closes": 60,
+        "fetch_errors": []
+      }
+    }
+  }
+}

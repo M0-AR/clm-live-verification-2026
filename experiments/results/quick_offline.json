@@ -1,0 +1,74 @@
+{
+  "ts": "2026-10-06T11:38:42Z",
+  "agents": {
+    "base": {
+      "contextbench": {
+        "agent": "base",
+        "needle_acc": 1.0,
+        "needle_pflops": 0.418184474014,
+        "needle_peak": 8074,
+        "needle_edits": 1,
+        "sudoku_acc": 1.0,
+        "sudoku_pflops": 0.110957135334,
+        "kv_acc": 1.0,
+        "kv_pflops": 2.9881620993165,
+        "log_acc": 0.3333333333333333,
+        "log_pflops": 1.371143864416,
+        "total_pflops": 4.8884475730805
+      },
+      "research": {
+        "agent": "base",
+        "accuracy": 0.75,
+        "pflops": 0.082158532846,
+        "peak_tokens": 1198,
+        "edits": 1
+      }
+    },
+    "summary": {
+      "contextbench": {
+        "agent": "summary",
+        "needle_acc": 1.0,
+        "needle_pflops": 0.418184474014,
+        "needle_peak": 8074,
+        "needle_edits": 1,
+        "sudoku_acc": 1.0,
+        "sudoku_pflops": 0.110957135334,
+        "kv_acc": 0.375,
+        "kv_pflops": 2.9265051277765,
+        "log_acc": 0.3333333333333333,
+        "log_pflops": 1.371143864416,
+        "total_pflops": 4.8267906015405
+      },
+      "research": {
+        "agent": "summary",
+        "accuracy": 0.75,
+        "pflops": 0.082158532846,
+        "peak_tokens": 1198,
+        "edits": 1
+      }
+    },
+    "clm": {
+      "contextbench": {
+        "agent": "clm",
+        "needle_acc": 1.0,
+        "needle_pflops": 0.0433197535685,
+        "needle_peak": 607,
+        "needle_edits": 1,
+        "sudoku_acc": 1.0,
+        "sudoku_pflops": 0.1043551428815,
+        "kv_acc": 1.0,
+        "kv_pflops": 0.1245978442895,
+        "log_acc": 0.3333333333333333,
+        "log_pflops": 0.220936637049,
+        "total_pflops": 0.49320937778849994
+      },
+      "research": {
+        "agent": "clm",
+        "accuracy": 0.75,
+        "pflops": 0.082158532846,
+        "peak_tokens": 1198,
+        "edits": 1
+      }
+    }
+  }
+}

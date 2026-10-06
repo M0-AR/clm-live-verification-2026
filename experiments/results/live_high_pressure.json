@@ -1,0 +1,35 @@
+{
+  "n_ops": 18,
+  "meta": {
+    "closes": 1000,
+    "errors": [],
+    "live": true
+  },
+  "n_queries": 6,
+  "results": {
+    "base": {
+      "acc": 1.0,
+      "pflops": 1.2053,
+      "peak": 21639,
+      "edits": 1
+    },
+    "summary": {
+      "acc": 1.0,
+      "pflops": 1.2053,
+      "peak": 21639,
+      "edits": 1
+    },
+    "acm": {
+      "acc": 1.0,
+      "pflops": 0.0639,
+      "peak": 230,
+      "edits": 1
+    },
+    "clm": {
+      "acc": 1.0,
+      "pflops": 0.0726,
+      "peak": 289,
+      "edits": 1
+    }
+  }
+}

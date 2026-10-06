@@ -1,0 +1,40 @@
+{
+  "queries": 6,
+  "meta": {
+    "closes": 60,
+    "errors": [],
+    "live": true
+  },
+  "results": {
+    "base": {
+      "acc": 1.0,
+      "pflops": 0.270186368514,
+      "peak": 1434,
+      "edits": 1
+    },
+    "summary": {
+      "acc": 1.0,
+      "pflops": 0.270186368514,
+      "peak": 1434,
+      "edits": 1
+    },
+    "self-compact": {
+      "acc": 1.0,
+      "pflops": 0.270186368514,
+      "peak": 1434,
+      "edits": 1
+    },
+    "acm": {
+      "acc": 1.0,
+      "pflops": 0.270186368514,
+      "peak": 1434,
+      "edits": 1
+    },
+    "clm": {
+      "acc": 1.0,
+      "pflops": 0.270186368514,
+      "peak": 1434,
+      "edits": 1
+    }
+  }
+}

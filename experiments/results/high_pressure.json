@@ -1,0 +1,66 @@
+{
+  "needle24": {
+    "base": {
+      "acc": 1.0,
+      "pflops": 2.8678,
+      "peak": 47900,
+      "edits": 1
+    },
+    "summary": {
+      "acc": 0.9076,
+      "pflops": 2.7217,
+      "peak": 23307,
+      "edits": 2
+    },
+    "self-compact": {
+      "acc": 1.0,
+      "pflops": 2.7024,
+      "peak": 6870,
+      "edits": 4
+    },
+    "acm": {
+      "acc": 0.0504,
+      "pflops": 2.6426,
+      "peak": 2113,
+      "edits": 3
+    },
+    "clm": {
+      "acc": 1.0,
+      "pflops": 0.2352,
+      "peak": 3089,
+      "edits": 1
+    }
+  },
+  "kv8000": {
+    "base": {
+      "acc": 1.0,
+      "pflops": 50.0154,
+      "peak": 391167,
+      "edits": 1
+    },
+    "summary": {
+      "acc": 0.0,
+      "pflops": 763.0194,
+      "peak": 174872,
+      "edits": 85
+    },
+    "self-compact": {
+      "acc": 0.0,
+      "pflops": 20.9054,
+      "peak": 6362,
+      "edits": 27
+    },
+    "acm": {
+      "acc": 1.0,
+      "pflops": 0.3801,
+      "peak": 1508,
+      "edits": 1
+    },
+    "clm": {
+      "acc": 1.0,
+      "pflops": 0.4723,
+      "peak": 180,
+      "edits": 16
+    }
+  }
+}
