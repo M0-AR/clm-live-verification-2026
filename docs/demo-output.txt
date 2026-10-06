@@ -1,0 +1,19 @@
+== base ==
+  ctxbench: {'needle_acc': 1.0, 'needle_pflops': 0.4182, 'sudoku_acc': 1.0, 'sudoku_pflops': 0.111, 'kv_acc': 1.0, 'kv_pflops': 2.9882, 'log_acc': 1.0, 'log_pflops': 1.3711, 'total_pflops': 4.8884}
+  research: {'agent': 'base', 'accuracy': 0.75, 'pflops': 0.082158532846, 'peak_tokens': 1198, 'edits': 1}
+== summary ==
+  ctxbench: {'needle_acc': 1.0, 'needle_pflops': 0.4182, 'sudoku_acc': 1.0, 'sudoku_pflops': 0.111, 'kv_acc': 0.375, 'kv_pflops': 2.9265, 'log_acc': 1.0, 'log_pflops': 1.3711, 'total_pflops': 4.8268}
+  research: {'agent': 'summary', 'accuracy': 0.75, 'pflops': 0.082158532846, 'peak_tokens': 1198, 'edits': 1}
+== acm ==
+  ctxbench: {'needle_acc': 1.0, 'needle_pflops': 0.4182, 'sudoku_acc': 1.0, 'sudoku_pflops': 0.111, 'kv_acc': 1.0, 'kv_pflops': 0.1122, 'log_acc': 1.0, 'log_pflops': 0.1686, 'total_pflops': 0.8099}
+  research: {'agent': 'acm', 'accuracy': 0.75, 'pflops': 0.082158532846, 'peak_tokens': 1198, 'edits': 1}
+== clm ==
+  ctxbench: {'needle_acc': 1.0, 'needle_pflops': 0.0433, 'sudoku_acc': 1.0, 'sudoku_pflops': 0.1044, 'kv_acc': 1.0, 'kv_pflops': 0.1246, 'log_acc': 1.0, 'log_pflops': 0.2209, 'total_pflops': 0.4932}
+  research: {'agent': 'clm', 'accuracy': 0.75, 'pflops': 0.082158532846, 'peak_tokens': 1198, 'edits': 1}
+WROTE experiments/results/demo_run.json
+
+=== HIDDEN-PATTERN SCAN ===
+base: needle=1.0 kv=1.0 total_pflops=4.8884
+summary: needle=1.0 kv=0.375 total_pflops=4.8268
+acm: needle=1.0 kv=1.0 total_pflops=0.8099
+clm: needle=1.0 kv=1.0 total_pflops=0.4932

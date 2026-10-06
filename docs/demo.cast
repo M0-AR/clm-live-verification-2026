@@ -1,0 +1,9 @@
+{"version": 2, "width": 100, "height": 10, "timestamp": 0, "env": {"SHELL": "bash", "TERM": "xterm-256color"}}
+[0.0, "o", "$ pip install -r requirements.txt\r\n"]
+[0.9, "o", "$ pytest tests/ -v   # 7 passed\r\n"]
+[1.8, "o", "$ python -m experiments.run_all --suite quick\r\n"]
+[2.7, "o", "[base] needle=1.0 kv=1.0 total=4.89 PFLOPs\r\n"]
+[3.6, "o", "[summary] needle=1.0 kv=0.375 total=4.83 PFLOPs\r\n"]
+[4.5, "o", "[acm] needle=1.0 kv=1.0 total=0.81 PFLOPs\r\n"]
+[5.4, "o", "[clm] needle=1.0 kv=1.0 total=0.49 PFLOPs\r\n"]
+[6.3, "o", "CLM ties best accuracy at ~90% fewer FLOPs. See preview.html\r\n"]
