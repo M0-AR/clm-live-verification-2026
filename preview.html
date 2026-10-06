@@ -197,15 +197,25 @@ paper/PAPER.md         long-form draft             docs/  guides + demo assets</
 
 <h2 class="sec" id="pages">Put this page on GitHub Pages 🌐</h2>
 <p class="lead">Two clicks and this exact page becomes your repo's website.</p>
-<pre>1) Push this repo to GitHub (it is already a git repo: one commit).
+<pre>Live URLs (all render — verified 200/200/200):
+  https://M0-AR.github.io/clm-live-verification-2026/   (entry)
+  https://M0-AR.github.io/clm-live-verification-2026/preview.html
+  https://M0-AR.github.io/clm-live-verification-2026/docs/preview.html
+
+1) Push this repo to GitHub.
 2) GitHub → repo → Settings → Pages:
      Source:  Deploy from a branch
-     Branch:  main  (or master)  +  folder: /docs
-     Save → wait ~1 min → open  https://&lt;you&gt;.github.io/&lt;repo&gt;/
-3) This works because:
-     - docs/index.html  is a copy of preview.html (Pages serves /docs)
-     - .nojekyll        disables Jekyll so _/vendor paths keep working
-     - everything is one file: no build step, no external JS to break</pre>
+     Branch:  main  +  folder: /  (root recommended; /docs works too)
+     Save → wait 1–2 min → check the Actions “pages build” run → open a URL above.
+3) This works under EITHER setting because of mirrors:
+     - preview.html      canonical page (root)
+     - index.html        redirect → preview.html (root entry)
+     - docs/preview.html + docs/index.html   mirrors with rewritten asset paths
+     - .nojekyll + docs/.nojekyll   keep both trees static
+     - everything is one file: no build step, no external JS to break
+Stuck on 404? A green build only proves *something* built. Probe:
+/, /preview.html, /docs/preview.html — curl each; the pattern tells you
+which source is active (table in README §13).</pre>
 <p class="note">Custom domain (optional): add <code>docs/CNAME</code> with your domain, then point DNS at GitHub Pages. Enforce HTTPS in the same settings screen. gh-pages / Actions deploys also work — branch deploy is simply the fastest.</p>
 
 <h2 class="sec" id="limits">Limits &amp; safety ⚠️</h2>

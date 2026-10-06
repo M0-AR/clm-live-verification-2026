@@ -11,7 +11,7 @@
 
 > **One-line claim (verified):** treating live context as an editable file lets a deterministic CLM policy retain 100% verbatim accuracy at **90–94% lower prefix-reuse FLOPs** than append-only baselines, while summary-only harnesses catastrophically fail on exact-recall tasks (0.0–0.375 accuracy) and ACM-style offload collapses on verbatim tasks (0.05 accuracy) — reproduced offline *and* on live Yahoo/ CoinGecko/ ECB data (2026-10-06).
 
-🌐 **Website:** open [`preview.html`](preview.html) in any browser for the full visual story (CEO summary, charts, demo, interactive quiz) — or publish it free via **Settings → Pages → Deploy from a branch → `/docs`** and share `https://<you>.github.io/<repo>/`. See [§13](#13-github-pages-website).
+🌐 **Website (live):** [home](https://M0-AR.github.io/clm-live-verification-2026/) · [preview.html](https://M0-AR.github.io/clm-live-verification-2026/preview.html) · [docs/preview.html](https://M0-AR.github.io/clm-live-verification-2026/docs/preview.html) — or open [`preview.html`](preview.html) locally. All three render the same page (see [§13](#13-github-pages-website) for why).
 
 > ## CEO summary — the 30-second version
 > **1.** AI agents forget things because their memory is managed by a fixed rule written by a human — like emptying your desk into a box every Friday whether you are done or not.
@@ -258,9 +258,41 @@ MIT for our code; paper summaries © their authors; market data © Yahoo/CoinGec
 
 ## 13. GitHub Pages + website
 
-This repo ships its own website: [`preview.html`](preview.html) (root) is the source; [`docs/index.html`](docs/index.html) is the identical published copy; [`docs/.nojekyll`](docs/.nojekyll) disables Jekyll; [`.github/workflows/pages.yml`](.github/workflows/pages.yml) deploys `docs/` on every push to `main`/`master`.
+Live site (all three render — verified 200/200/200 with source `/`):
 
-**Branch deploy (fastest, no Actions needed):** push → repo **Settings → Pages → Source: Deploy from a branch → Branch: `main` + folder `/docs` → Save** → wait ~1 minute → `https://<you>.github.io/<repo>/`. Custom domain: add it in the same screen (or a `docs/CNAME` file) and point DNS at GitHub Pages; enforce HTTPS there too.
+- https://M0-AR.github.io/clm-live-verification-2026/ (entry, redirect → preview)
+- https://M0-AR.github.io/clm-live-verification-2026/preview.html (canonical page)
+- https://M0-AR.github.io/clm-live-verification-2026/docs/preview.html (mirror, same content)
+
+**Why three copies?** Pages serves URLs by mirroring repo paths under the chosen source, so one setting always orphans one path. This repo ships mirrors for both settings and is green under either:
+
+| file | source `/` serves at | source `/docs` serves at |
+|---|---|---|
+| `index.html` (redirect → preview) | `/` ✅ | n/a |
+| `preview.html` (canonical) | `/preview.html` ✅ | n/a |
+| `docs/preview.html` (mirror) | `/docs/preview.html` ✅ | `/preview.html` ✅ |
+| `docs/index.html` (mirror) | `/docs/` ✅ | `/` ✅ |
+| `.nojekyll` + `docs/.nojekyll` | keeps both trees fully static | same |
+
+The `docs/` copies are mechanical path rewrites of the root page (`docs/X` → `X`: image, cast, video poster, transcript fetch); the diff shows only those lines. Asset paths are relative everywhere — no absolute or local paths — so project Pages (served under `/<repo>/`) resolve correctly.
+
+**Diagnose in 10 seconds (no login):**
+
+```bash
+BASE="https://M0-AR.github.io/clm-live-verification-2026"
+for p in "" "preview.html" "docs/preview.html"; do
+  printf "/%s -> " "$p"; curl -s -o /dev/null -w "%{http_code}\n" "$BASE/$p"
+done
+```
+
+| `/` | `/preview.html` | `/docs/preview.html` | Meaning |
+|---|---|---|---|
+| 200 | 200 | 200 | source `/`, mirrors present ✅ (current state) |
+| 200 | 200 | 404 | source `/docs` ✅, mirrors missing (add them) |
+| 404 | 404 | 404 | Pages off / still building / wrong branch |
+| 200 | 404 | 404 | entry exists but page file missing under this source |
+
+Rules: the entry (`index.html`) must sit at the top of the chosen source on the source branch; after changing Settings → Pages wait 1–2 min and check the Actions "pages build and deployment" run before re-probing (a green build only proves *something* built, never *your path*). Recommended: **Settings → Pages → Deploy from a branch → `main` + `/` (root)** — the mirrors make `/docs` equally safe. Custom domain: same screen (or a `CNAME` file) + DNS + enforce HTTPS. Alternative: [`.github/workflows/pages.yml`](.github/workflows/pages.yml) deploys `docs/` via Actions on every push.
 
 ## 14. Contributing
 
